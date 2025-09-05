@@ -90,20 +90,18 @@ public class Main {
             }
         }
 
-        System.out.println("\n=== RESULTADOS DEL ORDENAMIENTO ===");
+        System.out.println("\n RESULTADOS DEL ORDENAMIENTO ");
         System.out.println("Algoritmo: " + algoritmo.getClass().getSimpleName());
         System.out.println("Comparaciones: " + algoritmo.getComparaciones());
         System.out.println("Intercambios: " + algoritmo.getIntercambios());
         System.out.println("Tiempo (ns): " + algoritmo.getTiempoEjecucion());
 
-        mostrarTabla(ordenados, "\n=== CANDIDATOS ORDENADOS ===");
+        mostrarTabla(ordenados, "\n CANDIDATOS ORDENADOS");
         sc.close();
     }
 
-    // Método auxiliar para mostrar tabla organizada
     private static void mostrarTabla(Candidato[] candidatos, String titulo) {
         System.out.println("\n" + titulo);
-        System.out.println("======================================================================================================================");
         System.out.printf("%-20s %-10s %-15s %-12s %-10s %-12s %-40s\n",
                 "Nombre", "Distancia", "Horas Perdidas", "Prebendas", "Sobornos", "Corrupción", "Marchas");
         System.out.println("======================================================================================================================");
@@ -123,6 +121,6 @@ public class Main {
                     c.getPrebendas(), c.getSobornos(), c.getcasosCorrupciones(),
                     marchasTexto.toString());
         }
-        System.out.println("======================================================================================================================");
     }
 }
+
