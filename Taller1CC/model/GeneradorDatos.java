@@ -6,11 +6,11 @@ import java.util.Random;
 
 public class GeneradorDatos {
     private static final String[] NOMBRES = {
-        "Giovanny", "Luis", "Maria", "Carlos", "Sofía", "Pedro", "Giovany", "Andrés", "Laura", "Felipe"};
+        "Giovanny", "Luis", "Maria", "Carlos", "Sofia", "Pedro", "Giovany", "Andres", "Laura", "Felipe"};
     private static final String[] APELLIDOS = {
-        "Tarazona", "Rodriguez", "Martinez", "Tarazzona", "Lopez", "Sanchez", "Torres", "Ramirez", "Castro", "Vargas"};
+        "Tarazona", "Rodriguez", "Martinez", "Tarazzona", "Lopez", "Sanchez"};
     private static final String[] MARCHAS = {
-        "Marcha Pensional", "Marcha Anticorrupción", "Marcha Presupuestal",};
+        "Pensional", "Anticorrupcion", "Presupuestal",};
 
     private static Random random = new Random();
 

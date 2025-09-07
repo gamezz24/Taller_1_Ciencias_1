@@ -1,44 +1,44 @@
 package controller;
 
 import model.*;
+import model.Modelos.Burbuja;
+import model.Modelos.Insercion;
+import model.Modelos.Merge;
+import model.Modelos.Quick;
+import model.Modelos.Seleccion;
+
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int n = 200;
+        int n = 20;
         int m = 50;
 
         Candidato[] candidatos = GeneradorDatos.generarPoblacion(n, m);
 
-        mostrarTabla(candidatos, "=== LISTA INICIAL DE CANDIDATOS");
+        mostrarTabla(candidatos, " Candidatos");
 
-        System.out.println("\nSeleccione el orden de los datos:");
-        System.out.println("1. Aleatoria uniforme");
-        System.out.println("2. Casi ordenada");
-        System.out.println("3. Orden inverso");
-        sc.nextInt();
-
-        System.out.println("\nSeleccione el algoritmo de ordenamiento:");
-        System.out.println("1. Burbuja");
-        System.out.println("2. Inserción");
-        System.out.println("3. Selección");
-        System.out.println("4. Merge");
-        System.out.println("5. Quick");
+        System.out.println("\nseleccione el algoritmo de ordenamiento:");
+        System.out.println("1.Burbuja");
+        System.out.println("2.Inserción");
+        System.out.println("3.Selección");
+        System.out.println("4.Merge");
+        System.out.println("5.Quick");
         int opcionAlg = sc.nextInt();
 
-        System.out.println("\nSeleccione el atributo para ordenar:");
-        System.out.println("1. Distancia");
-        System.out.println("2. Horas Perdidas");
-        System.out.println("3. Prebendas");
-        System.out.println("4. Sobornos");
-        System.out.println("5. Corrupción");
+        System.out.println("\nseleccione el atributo para ordenar:");
+        System.out.println("1.Distancia");
+        System.out.println("2.Horas Perdidas");
+        System.out.println("3.Prebendas");
+        System.out.println("4.Sobornos");
+        System.out.println("5.Corrupción");
         int opcionAttr = sc.nextInt();
 
-        System.out.println("\nSeleccione el orden:");
-        System.out.println("1. Ascendente");
-        System.out.println("2. Descendente");
+        System.out.println("\nseleccione el orden:");
+        System.out.println("1.Ascendente");
+        System.out.println("2.Descendente");
         int opcionOrden = sc.nextInt();
 
         int[] datos = new int[candidatos.length];
@@ -104,7 +104,7 @@ public class Main {
         System.out.println("\n" + titulo);
         System.out.printf("%-20s %-10s %-15s %-12s %-10s %-12s %-40s\n",
                 "Nombre", "Distancia", "Horas Perdidas", "Prebendas", "Sobornos", "Corrupción", "Marchas");
-        System.out.println("======================================================================================================================");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
 
         for (Candidato c : candidatos) {
             String distanciaTexto = c.getDistancia() + " m";
@@ -123,4 +123,3 @@ public class Main {
         }
     }
 }
-

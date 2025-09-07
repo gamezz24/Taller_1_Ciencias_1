@@ -1,6 +1,12 @@
 package view;
 
 import model.*;
+import model.Modelos.Burbuja;
+import model.Modelos.Insercion;
+import model.Modelos.Merge;
+import model.Modelos.Quick;
+import model.Modelos.Seleccion;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -242,7 +248,7 @@ public class InterfazGrafica extends JFrame {
     private void exportarHTML() {
         if (resultadosDetalle.isEmpty()) return;
 
-        // Agrupamos para agregados
+        // Agrupamos para 
         Map<String, java.util.List<ResultadoOrdenamiento>> groups = new HashMap<>();
         for (ResultadoOrdenamiento r : resultadosDetalle) {
             String key = r.algoritmo + "|" + r.distribucion + "|" + r.atributo + "|" + r.n;
@@ -260,10 +266,10 @@ public class InterfazGrafica extends JFrame {
             try {
                 String htmlPath = f.getAbsolutePath().endsWith(".html") ? f.getAbsolutePath() : f.getAbsolutePath() + ".html";
                 StringBuilder sb = new StringBuilder();
-                sb.append("<html><head><meta charset='UTF-8'><title>Resultados Agregados</title>");
+                sb.append("<html><head><meta charset='UTF-8'><title>Resultados </title>");
                 sb.append("<style>table{border-collapse:collapse;}td,th{border:1px solid #333;padding:6px;}</style>");
-                sb.append("</head><body><h2>Resultados Agregados</h2>");
-                sb.append("<table><tr><th>Algoritmo</th><th>Distribución</th><th>Atributo</th><th>N</th><th>Mean Comp</th><th>Mean Int</th><th>Mean Time(ns)</th><th>IQR Comp</th><th>IQR Int</th><th>IQR Time</th></tr>");
+                sb.append("</head><body><h2>Resultados </h2>");
+                sb.append("<table><tr><th>Algoritmo</th><th>Distribución</th><th>Atributo</th><th>N</th><th>Comparaciones</th><th>Intercambios</th><th>Tiempo(ns)</th><th>IQR Comp</th><th>IQR Int</th><th>IQR Time</th></tr>");
                 for (AggregatedResult a : aggs) {
                     sb.append("<tr><td>").append(a.algoritmo).append("</td>")
                     .append("<td>").append(a.distribucion).append("</td>")
@@ -279,7 +285,7 @@ public class InterfazGrafica extends JFrame {
                 sb.append("</table></body></html>");
 
                 java.nio.file.Files.write(java.nio.file.Paths.get(htmlPath), sb.toString().getBytes());
-                JOptionPane.showMessageDialog(this, "HTML creado: " + htmlPath + "\nÁbrelo en el navegador y guarda como PDF.");
+                JOptionPane.showMessageDialog(this, "HTML creado: " + htmlPath);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
